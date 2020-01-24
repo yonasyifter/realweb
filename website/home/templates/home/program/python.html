@@ -1,0 +1,50 @@
+{% extends "home/layout.html" %}
+<head>
+  {% block static %}
+
+  {% endblock %}
+</head>
+<body>
+  {% block body %}
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l8 ">
+          {% for data in python %}
+              <p>{{data.title}}</p>
+              <p>
+                {{data.explain|safe}}
+              </p>
+          {% endfor %}
+        </div>
+          <div class=" col s12 m12 l4">
+            <br /> <br />
+            {% for data in  python  %}
+            <div class="video-container">
+              {{data.video|safe}}
+            </div>
+            {% endfor %}
+            <ul class="collapsible popout" data-collapsible="accordion" style='font-size:85%; padding-left:50px'>
+                <div class="card hoverable " style="max-width:400px; align-items: left;">
+                      <div class="card-image">
+                        <img id="process_click" class="responsive-img materialboxed" src="/static/images/prog_header.jpeg"/>
+                      </div>
+                </div>
+                {% for data  in python  %}
+                <li>
+                <a href="#"><div class="collapsible-header">{{data.title}}</div></a>
+                    <div class="collapsible-body">
+                        <p><a href="{% url '' %}"><button class="btn waves-effect waves-light right-align" style="background-color:#FFD166; color:#000000">go</button></a></p>
+                    </div>
+              </li>
+                {% endfor %}
+          </ul>
+          </div>
+      </div>
+    </div>
+  {% endblock %}
+  <script>
+    $(document).ready(function(){
+      $('.materialboxed').materialbox()
+    });
+  </script>
+</body>
