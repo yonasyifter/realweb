@@ -1,0 +1,110 @@
+{% extends "home/layout.html" %}
+<head>
+  {% load static %}
+  {% block static %}
+    <link rel="stylesheet" href="{% static "home/home.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  {% endblock %}
+</head>
+<body>
+  {% block LogIn %}Log In{% endblock %}
+  {% block SignUp %}Sign Up{% endblock %}
+  {% block body %}
+      <header>
+        <div class="container">
+          <div class="card">
+            <div class="card-image">
+              <img src="{% static "home/images/new.gif" %}" class = "responsive-img " alt="programming">
+              <div class='card-title' id='card-content'><h2 id='card-header'>Well come to Electro-Programming!!!</h2>
+                  <p id='card-cont'>This website is all about electronics and programming<br /> lets get started...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="container ">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h3 id='sign_in' class='center alert alert-danger'>Log In Form</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m12 l6">
+                  <img src="{% static "home/images/logIn.png" %}" alt="" class='responsive-img active z-depth-3'>
+              </div>
+              <div class="col s12 m12 l6">
+                <form>
+                  <fieldset class='alert alert-danger'>
+                    <i class='material-icons prefix'>account_circle</i>
+                    <label for="userName"  >User Name:</label>
+                    <input type='text' id='userName'  class='validate' />
+                    <div class="">
+                      <i class='material-icons prefix'>lock</i>
+                      <label for="password">Password:</label>
+                      <input type='password' id='password'/>
+                    </div>
+                      <div class="">
+                          <input type='submit' value='Log In'/>
+                      </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+      </section>
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h3 id='sign_up' class='center alert alert-success'>Create An Account</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m12 l5">
+                <div class="image">
+                    <img src="{% static "/home/images/create.png" %}" alt="">
+                </div>
+              </div>
+              <div class="col s12 m12 l7 alert alert-success">
+                <form action='#' method = 'post'>
+                    <input type='text' id='firstname' />
+                    <label for="firstName">first Name: </label>
+
+                    <input type='text' id='lastName' />
+                    <label for="lastName">Last Name: </label>
+
+                    <input type="email" name="email" value="">
+                    <label for="email">Email</label>
+
+                    <input type="password" name="password" value="">
+                    <label for="password">password</label>
+
+                    <input type="password" name="password" value="">
+                    <label for="re-password">password again:</label><br />
+                    <input class='btn-large right' type="submit" name="submit" value="submit">
+                    <i class='material-icons '>send</i>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+  {% endblock %}
+  <script src="{% static "/js/layout.js" %}"></script>
+  <script type="text/javascript">
+    function flashing(){
+        if(document.querySelector('#card-content').style.visibility === 'hidden'){
+          document.querySelector('#card-content').style.visibility = 'visible';
+        }
+        else {
+          document.querySelector('#card-content').style.visibility = 'hidden';
+        }
+    }
+    window.setInterval(flashing,1500);
+
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" charset="utf-8"></script>
+</body>
