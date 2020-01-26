@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^programming/$', views.program, name='program'),
     url(r'^projects/$', views.projects, name='projects'),
     url(r'^about_me/$', views.about_me, name='about_me'),
-    url(r'<int:python_id>/', views.python,  name='python'),
+    url(r'^python/$', views.python,  name='python'),
 
 ]

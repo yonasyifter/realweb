@@ -8,22 +8,25 @@
   {% block body %}
   <div class="container red lighten-4">
     <div class="row">
+    {% for program in  allprog %}
       <div class="col s12 m12 l6">
         <div class="card">
           <div class="card-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ygrzMrma-glm1kzgK6GRCEd5gvscFdxdIaCeaM8cmGGjHxSM&amp;s" alt="">
-          <a href="{% url 'python' %}"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a> 
+           {{program.img|safe}}
+          <a href="{% url 'python' %}"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a>
           </div>
           <div class="card-title">
             <p>
-              Helo
+              {{program.course}}
             </p>
           </div>
           <div class="card-content">
-            helo again
+            {{program.description}}
           </div>
         </div>
-        </div>
+      </div>
+        {% endfor %}
+
       </div>
   </div>
 

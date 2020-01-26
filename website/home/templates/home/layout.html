@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>www.electroProgramming.com</title>
-    <link rel='stylesheet' href="{% static 'tinymce/css/prism.css' %}" />
-    <link rel="stylesheet" href="{% static "/css/materialize.css" %}">
-    <link rel="stylesheet" href="{% static "/css/materialize.min.css" %}">
+  <!--  <link rel='stylesheet' href="{% static 'tinymce/css/prism.css' %}" />     -->
+    <link rel="stylesheet" href="{% static "/home/css/materialize.css" %}">
+    <link rel="stylesheet" href="{% static "/home/css/materialize.min.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -35,6 +35,7 @@
         <li><a href="/electronics/">Electronics Basics</a></li>
         <li><a href="/programming/">Programming Basics</a></li>
         <li><a href="/projects/">Projects</a></li>
+        <li><a href="#">Entertainment</a></li>
         <li><a href="/about_me/">About Me</a></li>
 
         <li><a href="#sign_in">{% block LogIn %}{% endblock %}</a></li>
@@ -56,6 +57,7 @@
       <li><a href="/electronics/">Electronics Basics</a></li>
       <li><a href="/programming/">Programming Basics</a></li>
       <li><a href="/projects/">Projects</a></li>
+      <li><a href="#">Entertainment</a></li>
       <li><a href="/about_me/">About Me</a></li>
       <li><a href="/sign_in/">Log In</a></li>
       <li><a href="/sign_up/">Sign Up</a></li>
@@ -88,17 +90,19 @@
           </div>
         </div>
       </footer>
-<script >
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-});
-</script>
+      <script>
+      document.addEventListener('DOMContentLoaded',()=>{
+        element = document.querySelector('.sidenav');
+        M.Sidenav.init(element,{edge:'left',draggable:true,preventScrolling:true});
+      });
+
+      </script>
     <script src='https://code.jquery.com/jquery-3.4.1.min.js'>  </script>
-    <script src='{% static "tinymce/js/prism.js" %}'></script>
+    <script src="{% static "/home/js/layout.js" %}" ></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src='{% static "/js/materialize.js" %}'></script>
-    <script src='{% static "/js/materialize.min.js" %}'></script>
+    <script src='{% static "/home/js/materialize.js" %}'></script>
+    <script src='{% static "/home/js/materialize.min.js" %}'></script>
   </body>
 </html>

@@ -15,7 +15,7 @@
           <div class="card">
             <div class="card-image">
               <img src="{% static "home/images/new.gif" %}" class = "responsive-img " alt="programming">
-              <div class='card-title' id='card-content'><h2 id='card-header'>Well come to Electro-Programming!!!</h2>
+              <div class='card-title ' id='card-content'><h2 id='card-header'>Well come to Electro-Programming!!!</h2>
                   <p id='card-cont'>This website is all about electronics and programming<br /> lets get started...</p>
               </div>
             </div>
@@ -30,10 +30,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m12 l6">
-                  <img src="{% static "home/images/logIn.png" %}" alt="" class='responsive-img active z-depth-3'>
+            <div class="col s12 m12 l6 offset-l2 push-l5" >
+                  <img src="{% static "home/images/logIn.png" %}" alt="" class='circle responsive-img active z-depth-3'>
               </div>
-              <div class="col s12 m12 l6">
+              <div class="col s12 m12 l6 pull-l5">
                 <form>
                   <fieldset class='alert alert-danger'>
                     <i class='material-icons prefix'>account_circle</i>
@@ -61,9 +61,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="col s12 m12 l5">
-                <div class="image">
-                    <img src="{% static "/home/images/create.png" %}" alt="">
+              <div class="col s12 m12 l5 grey">
+                <div class="image" style='margin-top:130px; margin-left: 90px'>
+                    <img src="{% static "/home/images/create.png" %}" alt="log in" class = 'circle responsive-img active z-depth-3'>
                 </div>
               </div>
               <div class="col s12 m12 l7 alert alert-success">
@@ -82,8 +82,8 @@
 
                     <input type="password" name="password" value="">
                     <label for="re-password">password again:</label><br />
-                    <input class='btn-large right' type="submit" name="submit" value="submit">
-                    <i class='material-icons '>send</i>
+                    <button type="button" name="button" class='btn large'><strong>Submit</strong><i class='material-icons'>send</i></button>
+                    <br />
 
                 </form>
 
@@ -91,7 +91,9 @@
             </div>
           </div>
         </section>
-
+        <section>
+          <div class="alert alert-success"><h2 class='center'>notification <small>Zone</small></h2></div>
+        </section>
   {% endblock %}
   <script src="{% static "/js/layout.js" %}"></script>
   <script type="text/javascript">

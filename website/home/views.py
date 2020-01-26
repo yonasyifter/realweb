@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from .models import Program
+from .models import Program, Allprogramming
 
 # Create your views here.
 
@@ -12,8 +12,11 @@ def electronics(request):
     return render(request, 'home/electronics.html')
 
 def program(request):
-
-    return render(request, 'home/programming.html')
+    allprog = Allprogramming.objects.all()
+    context = {
+        'allprog': allprog
+    }
+    return render(request, 'home/programming.html', context)
 
 
 def projects(request):
@@ -22,10 +25,9 @@ def projects(request):
 def about_me(request):
     return render(request, 'home/about_me.html')
 
-def python(request, python_id):
-    python_id = Program.objects.all(pk=python_id)
+def python(request):
     python = Program.objects.all()
     context = {
-            'python': python, 'python_id': python_id
+            'python': python
         }
     return render(request, 'home/program/python.html', context)
