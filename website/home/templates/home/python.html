@@ -46,6 +46,14 @@
   {% endblock %}
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" charset="utf-8"></script>
   <script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    var element = document.querySelector('.collapsible .poput');
+     var ev = M.Collapsible.init(element, {
+       accordion:true;
+     });
+     ev.open(3);
+     ev.close(3);
+  });
 
   </script>
 </body>
