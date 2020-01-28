@@ -1,4 +1,5 @@
 {% extends "home/layout.html" %}
+{% load static %}
 <head>
   {% block static %}
 
@@ -10,11 +11,11 @@
     <div class="row">
     {% for program in  allprog %}
       <div class="col s12 m12 l6">
-        <a href="{{program.Allprog_slug}}">
+        <a href="{{program.Allprog_slug|slugify}}/">
         <div class="card">
           <div class="card-image">
            {{program.img|safe}}
-          <a href="{% url 'python' %}"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a>
+          <a href="{{program.Allprog_slug|slugify}}/"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a>
           </div>
           <div class="card-title">
             <p>

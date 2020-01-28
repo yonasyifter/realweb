@@ -9,13 +9,13 @@ def home(request):
     return render(request, 'home/home.html')
 
 def electronics(request):
-    return render(request, 'home/electronics.html')
+    return render(request, 'home/electronics/electronics.html')
 
-def program(request):
+def programming(request):
     allprog = Allprogramming.objects.all()
     context = {
         'allprog': allprog
-    }
+        }
     return render(request, 'home/programming.html', context)
 
 def slug_request(request, slug_request):
@@ -33,13 +33,16 @@ def slug_request(request, slug_request):
 
         lecture = [l.lecture_slug for l in Program.objects.all()]
         if slug_request in lecture:
-            
 
+            return HttpResponse(f"{slug_request} is here")
 
-
+        return Http404("Loading Error")
 
 def projects(request):
-    return render(request, 'home/projects.html')
+    return render(request, 'home/projects/projects.html')
 
 def about_me(request):
     return render(request, 'home/about_me.html')
+
+def entertain(request):
+    return render(request, 'home/Entertainment/entertain.html')
