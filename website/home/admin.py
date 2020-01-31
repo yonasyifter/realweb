@@ -11,6 +11,7 @@ class allProgAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE()},
     }
+    list_display = ('course', 'description')
 class subProgAdmin(admin.ModelAdmin):
     fieldsets = [('Image that describe the course', {'fields': ['sub_img']}),('some Description', {'fields': ['sub_programming', 'sub_course', 'sub_description']})]
 

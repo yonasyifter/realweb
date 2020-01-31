@@ -10,12 +10,12 @@
   <div class="container red lighten-4">
     <div class="row">
     {% for program in  allprog %}
-      <div class="col s12 m12 l6">
-        <a href="{{program.Allprog_slug|slugify}}/">
+    <a href="{{program.Allprog_slug}}">
+      <div class="col s12 m12 l6 ">
         <div class="card">
           <div class="card-image">
            {{program.img|safe}}
-          <a href="{{program.Allprog_slug|slugify}}/"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a>
+          <a href="{{program.Allprog_slug}}"><div class="btn-floating red  halfway-fab  pulse"> <i class='material-icons'>send</i></div> </a>
           </div>
           <div class="card-title">
             <p>
@@ -26,8 +26,8 @@
             {{program.description}}
           </div>
         </div>
-        </a>
       </div>
+        </a>
         {% endfor %}
 
       </div>

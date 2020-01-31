@@ -7,7 +7,7 @@
   {% endblock %}
 </head>
 <body>
-  {% block LogIn %}Log In{% endblock %}
+
   {% block SignUp %}Sign Up{% endblock %}
   {% block body %}
       <header>
@@ -23,35 +23,34 @@
         </div>
       </header>
       <section>
-        <div class="container ">
-          <div class="row">
-            <div class="col s12 m12 l12">
-              <h3 id='sign_in' class='center alert alert-danger'>Log In Form</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m12 l6 offset-l2 push-l5" >
-                  <img src="{% static "home/images/logIn.png" %}" alt="" class='circle responsive-img active z-depth-3'>
-              </div>
-              <div class="col s12 m12 l6 pull-l5">
-                <form>
-                  <fieldset class='alert alert-danger'>
-                    <i class='material-icons prefix'>account_circle</i>
-                    <label for="userName"  >User Name:</label>
-                    <input type='text' id='userName'  class='validate' />
-                    <div class="">
-                      <i class='material-icons prefix'>lock</i>
-                      <label for="password">Password:</label>
-                      <input type='password' id='password'/>
+              <a href="#TCModal" class="TCtrigger"> {% block LogIn %}Log In{% endblock %}</a>
+                <div id="TCModal" class="modal">
+                  <h3 id='sign_in' class='center alert alert-danger'>Log In Form</h3>
+                    <div class="modal-content">
+                      <div class="row">
+                        <div class="col s12 m12 l6 offset-l2 push-l5" >
+                        <img src="{% static "home/images/logIn.png" %}" alt="" class='circle responsive-img active z-depth-3'>
+                        </div>
+                        <div class="col s12 m12 l6 pull-l5">
+                        <form>
+                          <fieldset class='alert alert-danger'>
+                            <i class='material-icons prefix'>account_circle</i>
+                            <label for="userName"  >User Name:</label>
+                            <input type='text' id='userName'  class='validate' />
+                            <div class="">
+                              <i class='material-icons prefix'>lock</i>
+                              <label for="password">Password:</label>
+                              <input type='password' id='password'/>
+                            </div>
+                              <div class="">
+                                  <input type='submit' value='Log In'/>
+                              </div>
+                          </fieldset>
+                      </form>
                     </div>
-                      <div class="">
-                          <input type='submit' value='Log In'/>
-                      </div>
-                  </fieldset>
-                </form>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
       </section>
         <section>
           <div class="container">
@@ -97,6 +96,14 @@
   {% endblock %}
   <script src="{% static "/js/layout.js" %}"></script>
   <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded',()=>{
+    var element = document.querySelector('.TCtrigger');
+    M.leanModal.init(element,{dismissible:True,
+            opacity: .3,
+            in_duration: 100,
+            out_duration: 50});
+    document.querySelector('.TCtrigger').openModal();
+  });
     function flashing(){
         if(document.querySelector('#card-content').style.visibility === 'hidden'){
           document.querySelector('#card-content').style.visibility = 'visible';

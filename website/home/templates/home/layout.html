@@ -23,20 +23,28 @@
       <nav class="deep-purple lighten-1 nav-wrapper" >
         <a href="#" class="brand-logo"><img class="circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ygrzMrma-glm1kzgK6GRCEd5gvscFdxdIaCeaM8cmGGjHxSM&amp;s" height="65px" width="150px"></a>
         <a href='#' class="sidenav-trigger" data-target="mobile-link"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <div class="col s8 m6 l4">
+                    <a class='dropdown-button red ' href='#' data-activates='countDropdown'>Languages</a>
+                      <ul id='countDropdown' class='dropdown-content'>
+                          <li><a href="#!">Tigrigna</a></li><li class="divider"></li>
+                          <li><a href="#!">Amharic</a></li><li class="divider"></li>
+                          <li><a href="#!">English</a></li><li class="divider"></li>
+                        </ul>
+                  </div>
+              </li>
         <li><div class="row">
           <div class="input-field col s8">
+            <form action='#' method='get'>
             <i class="large material-icons prefix">search</i>
-            <input type="text" id="autocomplete-input" class="autocomplete">
-            <label for="autocomplete-input">Search</label>
+            <input type="text" id="autocomplete-input" placeholder='Search' class="autocomplete">
+            </form>
           </div>
         </div>
         </li>
         <li><a href="/"><i class="material-icons">home</i></a></li>
-        <li><a href="/electronics/">Electronics Basics</a></li>
-        <li><a href="/programming/">Programming Basics</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/entertainment/">Entertainment</a></li>
+        <li><a href="/all_program/">All programs</a>  </li>
         <li><a href="/about_me/">About Me</a></li>
 
         <li><a href="#sign_in">{% block LogIn %}{% endblock %}</a></li>
@@ -46,20 +54,32 @@
     </div>
 
       <ul class="sidenav" id="mobile-link">
-      <li>  <div class="row">
+      <li><div class="chip">
+         <img src="{% static "home/images/prog_header.jpeg" %}" alt="yonas" class="responsive-img">yonas
+       </div>
+      </li>
+      <li class='green lighten-4 z-depth-2'> <div class="row">
       <div class="input-field col s9">
-        <i class="large material-icons prefix">search</i>
-        <input type="text" id="autocomplete-input" class="autocomplete">
-        <label for="autocomplete-input">Search</label>
+      <form action='#' method='get'>
+        <i class="large material-icons prefix orange-text">search</i>
+        <input type="text" id="autocomplete-input" class="autocomplete" placeholder='Search'>
+      </form>
       </div>
       </div>
       </li>
-      <li><a href="/">Home</a></li>
-      <li><a href="/electronics/">Electronics Basics</a></li>
-      <li><a href="/programming/">Programming Basics</a></li>
-      <li><a href="/projects/">Projects</a></li>
-      <li><a href="/entertainment/">Entertainment</a></li>
-      <li><a href="/about_me/">About Me</a></li>
+      <li class='color green'><a href="/"><i class='material-icons left orange-text'>home</i>Home</a></li>
+      <li class='color yellow'><a href="/all_program/"><i class='m aterial-icons left orange-text'>opacity</i>All programs</a></li>
+      <li class='color red'><a href="/about_me/"><i class='material-icons left orange-text'>person</i>About Me</a></li>
+      <li>
+        <div class="col s8 m6 l4">
+            <a class='dropdown-button red ' href='#' data-activates='countDropdown'>Languages</a>
+              <ul id='countDropdown' class='dropdown-content'>
+                  <li><a href="#!">Tigrigna</a></li><li class="divider"></li>
+                  <li><a href="#!">Amharic</a></li><li class="divider"></li>
+                  <li><a href="#!">English</a></li><li class="divider"></li>
+                </ul>
+          </div>
+      </li>
       </ul>
 
       {% block body %}
@@ -69,14 +89,6 @@
       <footer class="page-footer">
         <div class="container">
           <div class="row">
-            <div class="col s12 m12 l6 ">
-                <a class='dropdown-button btn' href='#' data-activates='countDropdown'>Languages</a>
-                  <ul id='countDropdown' class='dropdown-content'>
-                      <li><a href="#!">Tigrigna</a></li><li class="divider"></li>
-                      <li><a href="#!">Amharic</a></li><li class="divider"></li>
-                      <li><a href="#!">English</a></li><li class="divider"></li>
-                    </ul>
-              </div>
             <div class="col s12 m12 l6">
               <h5 class="white-text">Links</h5>
               <ul>
