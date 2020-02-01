@@ -23,7 +23,7 @@ def slug_request(request, slug_request):
         allSeries = {}
         for m in matching_sites.all():
             lecture = Program.objects.filter(Programming__sub_course=m.sub_course)
-            allSeries[m] = lecture.lecture_slug
+            allSeries[m] = lecture
     return render(request, 'home/subprog.html', context={'allSeries': allSeries })
 #
 #
